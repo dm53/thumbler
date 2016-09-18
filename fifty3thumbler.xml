@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.6" type="plugin" group="content">
+    <name>Fifty3 Thumbler</name>
+    <creationDate>17.09.2016</creationDate>
+    <author>Andrey Loskutnikov</author>
+    <authorEmail>andrey@loskutnikoff.ru</authorEmail>
+    <authorUrl>http://fifty3.ru</authorUrl>
+    <copyright>Andrey Loskutnikov</copyright>
+    <license>GNU/GPL v3</license>
+    <version>1.0</version>
+    <description>This plugin scales/resizes loaded images to width and height set in images properties when you save content page.</description>
+    <files>
+        <filename plugin="fifty3thumbler">fifty3thumbler.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="image_timeout" type="integer"
+                       label="Image timeout, seconds"
+                       description="If image is old enough, plugin will make new file, original will be left untouched. Otherwise original image will be replaced with resized one"
+                       default="3600"
+                />
+                <field name="max_width" type="number"
+                       label="Max width, px"
+                       description="All loaded images should be fit this width. Set 0 to unlimited"
+                       default="1200" min="0"
+                />
+                <field name="max_height" type="number"
+                       label="Max height, px"
+                       description="All loaded images should be fit this height. Set 0 to unlimited"
+                       default="1024" min="0"
+                />
+                <field name="convert_to_jpeg" type="radio"
+                       label="Convert non-jpeg images to jpeg if larger than 20kb?"
+                       class="btn-group btn-group-yesno"
+                       default="1">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
